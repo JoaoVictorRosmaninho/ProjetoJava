@@ -1,4 +1,4 @@
-package start.projetojava;
+package start;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
