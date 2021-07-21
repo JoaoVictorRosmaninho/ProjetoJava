@@ -12,6 +12,15 @@ package model;
 public class Senha {
     private String descricao;
     private String pass;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Senha(String descricao, String pass) {
         this.descricao = descricao;

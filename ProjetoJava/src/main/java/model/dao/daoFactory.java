@@ -10,7 +10,7 @@ package model.dao;
  * @author jv
  */
 public class daoFactory {
-    public static contatoDaoJDBC novoContatoDao() throws Exception {
-        return new contatoDaoJDBC();
+    public static SenhaJDBC novaSenhaDao() throws Exception {
+        return new SenhaJDBC();
     }
 }
