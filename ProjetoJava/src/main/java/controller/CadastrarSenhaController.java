@@ -12,28 +12,27 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
+import javafx.scene.shape.Circle;
 
 /**
  * FXML Controller class
  *
- * @author jv
+ * @author wilse
  */
-public class PrincipalController implements Initializable {
+public class CadastrarSenhaController implements Initializable {
 
     @FXML
-    private TextField txtFNome;
+    private Button btnVoltar;
     @FXML
-    private TextField txtFEmail;
+    private TextField txtFDescricao;
     @FXML
-    private Text txtVerificarCadasto;
+    private TextField txtFLogin;
     @FXML
-    private Button btnCadastrarUsuario;
+    private TextField txtFSenha;
     @FXML
-    private Button btnLoginUsuario;
+    private Button btnCadastrarSenha;
     @FXML
-    private ImageView imgViewUsuario;
+    private Circle circleDificuldade;
 
     /**
      * Initializes the controller class.
@@ -44,11 +43,11 @@ public class PrincipalController implements Initializable {
     }    
 
     @FXML
-    private void btnCadastraUsuarioOnAction(ActionEvent event) {
+    private void btnVoltarOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void btnLoginUsuarioOnAction(ActionEvent event) {
+    private void btnCadastrarSenhaOnAction(ActionEvent event) {
     }
     
 }

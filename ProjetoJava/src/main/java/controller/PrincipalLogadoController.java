@@ -11,29 +11,28 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.SortEvent;
+import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
  *
- * @author jv
+ * @author wilse
  */
-public class PrincipalController implements Initializable {
+public class PrincipalLogadoController implements Initializable {
 
     @FXML
-    private TextField txtFNome;
+    private Button btnCadastrarSenha;
     @FXML
-    private TextField txtFEmail;
+    private Button btnVizualiarSenhas;
     @FXML
-    private Text txtVerificarCadasto;
+    private ImageView imgViewLogado;
     @FXML
-    private Button btnCadastrarUsuario;
+    private VBox vboxSenhas;
     @FXML
-    private Button btnLoginUsuario;
-    @FXML
-    private ImageView imgViewUsuario;
+    private TableView<?> tableSenhas;
 
     /**
      * Initializes the controller class.
@@ -44,11 +43,15 @@ public class PrincipalController implements Initializable {
     }    
 
     @FXML
-    private void btnCadastraUsuarioOnAction(ActionEvent event) {
+    private void btnCadastrarSenhaOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void btnLoginUsuarioOnAction(ActionEvent event) {
+    private void btnVizualiarSenhasOnAction(ActionEvent event) {
     }
+
+    //@FXML
+    //private void tableSenhasOnSort(SortEvent<C> event) {
+    //}
     
 }
