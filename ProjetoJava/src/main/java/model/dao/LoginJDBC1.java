@@ -17,10 +17,10 @@ import model.Senha;
  *
  * @author jv
  */
-public class SenhaJDBC implements InterfaceDao<Senha> {
+public class LoginJDBC1 implements InterfaceDao<Senha> {
     private Connection conn;
 
-    public SenhaJDBC() throws SQLException {
+    public LoginJDBC1() throws SQLException {
         this.conn = ConnFactory.getConnection();
     }
     
@@ -30,7 +30,6 @@ public class SenhaJDBC implements InterfaceDao<Senha> {
         PreparedStatement ps = conn.prepareStatement("INSERT INTO Senha(pass, desc, desc_forca) VALUES(?, ?, ?);");
         ps.setString(1, entidade.getDescricao());
         ps.setString(2, entidade.getPass());
-        ps.setString(3, entidade.getDesc_senha());
         ps.execute(); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -46,8 +45,7 @@ public class SenhaJDBC implements InterfaceDao<Senha> {
         PreparedStatement ps = conn.prepareStatement("UPDATE Senha SET descricao = ?, pass = ?, desc_forca = ?  WHERE id = ?");
         ps.setString(1, entidade.getDescricao());
         ps.setString(2, entidade.getPass());
-        ps.setString(3, entidade.getDesc_senha());
-        ps.setInt(4, entidade.getId());
+        ps.setInt(3, entidade.getId());
         ps.execute();   
     }
 
