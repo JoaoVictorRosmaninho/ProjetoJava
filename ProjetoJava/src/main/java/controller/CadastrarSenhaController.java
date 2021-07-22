@@ -107,7 +107,6 @@ public class CadastrarSenhaController implements Initializable {
         if(!(txtFLogin.getText()== "" || txtFSenha.getText()== "")){ 
             txtStatusSenhaCadastrada.setText("Senha criada com sucesso!");
         }
-        
         circleDificuldade.setVisible(false);
         txtFDescricao.setText("");
         txtFLogin.setText("");

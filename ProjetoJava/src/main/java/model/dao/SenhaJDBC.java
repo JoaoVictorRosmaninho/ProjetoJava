@@ -27,7 +27,7 @@ public class SenhaJDBC implements InterfaceDao<Senha> {
 
     @Override
     public void incluir(Senha entidade) throws Exception {
-        PreparedStatement ps = conn.prepareStatement("INSERT INTO Contato(nome, email, telefone) VALUES(?, ?);");
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO Senha(pass, desc) VALUES(?, ?);");
         ps.setString(1, entidade.getDescricao());
         ps.setString(2, entidade.getPass());
         ps.execute(); //To change body of generated methods, choose Tools | Templates.
@@ -35,14 +35,14 @@ public class SenhaJDBC implements InterfaceDao<Senha> {
 
     @Override
     public void excluir(Senha entidade) throws Exception {
-        PreparedStatement ps = conn.prepareStatement("DELETE FROM Contato where id = ?");
+        PreparedStatement ps = conn.prepareStatement("DELETE FROM Senha where id = ?");
         ps.setInt(1, entidade.getId());
         ps.execute(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void editar(Senha entidade) throws Exception {
-        PreparedStatement ps = conn.prepareStatement("UPDATE Senha SET descricao = ?, pass = ? WHERE id = ?");
+        PreparedStatement ps = conn.prepareStatement("UPDATE Senha SET descricao = ?, pass = ?, desc_forca = ?  WHERE id = ?");
         ps.setString(1, entidade.getDescricao());
         ps.setString(2, entidade.getPass());
         ps.setInt(3, entidade.getId());
