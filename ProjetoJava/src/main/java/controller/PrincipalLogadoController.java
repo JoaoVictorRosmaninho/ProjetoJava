@@ -5,6 +5,7 @@
  */
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -15,6 +16,8 @@ import javafx.scene.control.SortEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import model.Senha;
+import start.App;
 
 /**
  * FXML Controller class
@@ -43,15 +46,16 @@ public class PrincipalLogadoController implements Initializable {
     }    
 
     @FXML
-    private void btnCadastrarSenhaOnAction(ActionEvent event) {
+    private void btnCadastrarSenhaOnAction(ActionEvent event) throws IOException {
+        App.setRoot("cadastrarSenha");
     }
 
     @FXML
     private void btnVizualiarSenhasOnAction(ActionEvent event) {
     }
 
-    //@FXML
-    //private void tableSenhasOnSort(SortEvent<C> event) {
-    //}
+    @FXML
+    private void tableSenhasOnSort(SortEvent<Senha> event) {
+    }
     
 }

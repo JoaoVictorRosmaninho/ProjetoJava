@@ -15,7 +15,7 @@
       <Label layoutX="170.0" layoutY="117.0" text="Email:" />
       <TextField fx:id="txtFNome" layoutX="184.0" layoutY="84.0" />
       <TextField fx:id="txtFEmail" layoutX="184.0" layoutY="147.0" />
-      <Text fx:id="txtVerificarCadasto" layoutX="206.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AquiExibirSeCadastrou" />
+      <Text fx:id="txtVerificarCadastro" layoutX="206.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <ImageView fx:id="imgViewUsuario" fitHeight="150.0" fitWidth="200.0" layoutX="355.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -14,10 +14,11 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    private static String caminho = "/view/";
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("/view/principal"), 640, 480);
+        scene = new Scene(loadFXML("principal"), 640, 480);
         stage.setScene(scene);
         stage.show();
     }
@@ -27,7 +28,7 @@ public class App extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(caminho + fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
