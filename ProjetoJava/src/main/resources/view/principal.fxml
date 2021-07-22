@@ -9,13 +9,18 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrincipalController">
    <children>
-      <Button fx:id="btnCadastrarUsuario" layoutX="165.0" layoutY="251.0" mnemonicParsing="false" onAction="#btnCadastraUsuarioOnAction" text="Cadastrar" />
-      <Button fx:id="btnLoginUsuario" layoutX="321.0" layoutY="251.0" mnemonicParsing="false" onAction="#btnLoginUsuarioOnAction" prefHeight="25.0" prefWidth="67.0" text="Login" />
+      <Button fx:id="btnCadastrarUsuario" layoutX="109.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnCadastraUsuarioOnAction" text="Cadastrar" />
+      <Button fx:id="btnLoginUsuario" layoutX="411.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnLoginUsuarioOnAction" prefHeight="25.0" prefWidth="67.0" text="Login" />
       <Label layoutX="170.0" layoutY="58.0" text="Nome:" />
       <Label layoutX="170.0" layoutY="117.0" text="Email:" />
       <TextField fx:id="txtFNome" layoutX="184.0" layoutY="84.0" />
       <TextField fx:id="txtFEmail" layoutX="184.0" layoutY="147.0" />
-      <Text fx:id="txtVerificarCadastro" layoutX="206.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <ImageView fx:id="imgViewUsuario" fitHeight="150.0" fitWidth="200.0" layoutX="355.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="txtVerificarCadastro" layoutX="299.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="1.0" />
+      <ImageView fx:id="imgViewUsuario" fitHeight="128.0" fitWidth="128.0" layoutX="14.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="txtAlertaNome" layoutX="444.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Campo Obrigatório" visible="false" />
+      <Text fx:id="txtAlertaEmail" layoutX="444.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Campo Obrigatório" visible="false" />
+      <Label layoutX="171.0" layoutY="183.0" text="Senha:" />
+      <TextField fx:id="txtFSenha" layoutX="184.0" layoutY="212.0" />
+      <Text fx:id="txtAlertaSenha" layoutX="444.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Campo Obrigatório" visible="false" />
    </children>
 </AnchorPane>

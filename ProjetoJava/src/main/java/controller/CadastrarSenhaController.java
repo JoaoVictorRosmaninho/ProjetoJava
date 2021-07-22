@@ -8,6 +8,8 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -45,12 +47,54 @@ public class CadastrarSenhaController implements Initializable {
     private Circle circleDificuldade;
     @FXML
     private Label txtStatusSenhaCadastrada;
+    @FXML
+    private Label labelAlertaLogin;
+    @FXML
+    private Label labelAlertaSenha;
 
     /**
      * Initializes the controller class.
      */
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        labelAlertaLogin.setTextFill(Color.RED);
+        labelAlertaSenha.setTextFill(Color.RED);
+        
+        txtFSenha.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue.length() == 26){
+                txtFSenha.setText(oldValue);
+            }
+            if(newValue.length()== 1){
+                labelAlertaSenha.setVisible(false);
+            }
+            if(newValue.length()== 0){
+                circleDificuldade.setVisible(false);
+                labelAlertaSenha.setVisible(true);
+            }
+            ;});
+        
+        
+        txtFLogin.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue.length() == 40){
+                txtFLogin.setText(oldValue);
+            }
+            if(newValue.length()== 1){
+                labelAlertaLogin.setVisible(false);
+            }
+            if(newValue.length()== 0){
+                labelAlertaLogin.setVisible(true);
+            }
+            ;});
+        
+        
+        txtFDescricao.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue.length() == 100){
+                txtFDescricao.setText(oldValue);
+            }
+            ;});
     }    
 
     @FXML
@@ -60,16 +104,21 @@ public class CadastrarSenhaController implements Initializable {
 
     @FXML
     private void btnCadastrarSenhaOnAction(ActionEvent event) {
+        if(!(txtFLogin.getText()== "" || txtFSenha.getText()== "")){ 
+            txtStatusSenhaCadastrada.setText("Senha criada com sucesso!");
+        }
+        
         circleDificuldade.setVisible(false);
         txtFDescricao.setText("");
         txtFLogin.setText("");
         txtFSenha.setText("");
-        txtStatusSenhaCadastrada.setText("Senha criada com sucesso!");
+       
         forcaSenha = 0;
     }
 
     @FXML
     private void txtFSenhaOnTextChanged(KeyEvent event) {
+        
         circleDificuldade.setVisible(true);
         String auxString = txtFSenha.getText();
         int auxToIF = 0;
@@ -80,30 +129,30 @@ public class CadastrarSenhaController implements Initializable {
                 return;
             }
             if(event.getCode() == KeyCode.BACK_SPACE){
-                if(indice > 0 && indice<24){
+                if(indice > 0 && indice<25){
                     forcaSenha -= forcaSenhaUltima[indice-1];
                     indice--;
                 }
             }else if(auxToIF > 96 && auxToIF < 123){
-                if(indice < 24 && indice>=0){
+                if(indice < 25 && indice>=0){
                     forcaSenha += 1;
                     forcaSenhaUltima[indice] = 1;
                     indice++;
                 }
             }else if(auxToIF > 64 && auxToIF < 91){
-                if(indice < 24 && indice>=0){
+                if(indice < 25 && indice>=0){
                     forcaSenhaUltima[indice] = 2;
                     forcaSenha += 2;
                     indice++;
                 }
             }else if(auxToIF > 47 && auxToIF < 58){
-                if(indice < 24 && indice>=0){
+                if(indice < 25 && indice>=0){
                     forcaSenhaUltima[indice] = 3;
                     forcaSenha += 3;
                     indice++;
                 }
             }else{
-                if(indice < 24 && indice>=0){
+                if(indice < 25 && indice>=0){
                     forcaSenhaUltima[indice] = 4;
                     forcaSenha += 4;
                     indice++;

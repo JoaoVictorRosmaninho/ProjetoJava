@@ -18,5 +18,7 @@
       <Button fx:id="btnCadastrarSenha" layoutX="450.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnCadastrarSenhaOnAction" text="Cadastrar nova senha" />
       <Circle fx:id="circleDificuldade" fill="DODGERBLUE" layoutX="251.0" layoutY="213.0" radius="9.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" />
       <Label fx:id="txtStatusSenhaCadastrada" layoutX="127.0" layoutY="251.0" />
+      <Label fx:id="labelAlertaLogin" layoutX="400.0" layoutY="130.0" text="Campo Obrigatório" visible="false" />
+      <Label fx:id="labelAlertaSenha" layoutX="400.0" layoutY="196.0" text="Campo Obrigatório" visible="false" />
    </children>
 </AnchorPane>
