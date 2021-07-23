@@ -11,52 +11,54 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.Senha;
+import model.Login;
 
 /**
  *
  * @author jv
  */
-public class LoginJDBC1 implements InterfaceDao<Senha> {
+public class LoginJDBC implements InterfaceDao<Login> {
     private Connection conn;
 
-    public LoginJDBC1() throws SQLException {
+    public LoginJDBC() throws SQLException {
         this.conn = ConnFactory.getConnection();
     }
     
 
     @Override
-    public void incluir(Senha entidade) throws Exception {
-        PreparedStatement ps = conn.prepareStatement("INSERT INTO Senha(pass, desc, desc_forca) VALUES(?, ?, ?);");
-        ps.setString(1, entidade.getDescricao());
+    public void incluir(Login entidade) throws Exception {
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO Login(login, pass, desc) VALUES(?, ?, ?);");
+        ps.setString(1, entidade.getLogin());
         ps.setString(2, entidade.getPass());
+        ps.setString(3, entidade.getDescricao());
         ps.execute(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void excluir(Senha entidade) throws Exception {
-        PreparedStatement ps = conn.prepareStatement("DELETE FROM Senha where id = ?");
+    public void excluir(Login entidade) throws Exception {
+        PreparedStatement ps = conn.prepareStatement("DELETE FROM Login where id = ?");
         ps.setInt(1, entidade.getId());
         ps.execute(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void editar(Senha entidade) throws Exception {
-        PreparedStatement ps = conn.prepareStatement("UPDATE Senha SET descricao = ?, pass = ?, desc_forca = ?  WHERE id = ?");
+    public void editar(Login entidade) throws Exception {
+        PreparedStatement ps = conn.prepareStatement("UPDATE Login SET login = ?, pass = ?, desc = ?  WHERE id = ?");
         ps.setString(1, entidade.getDescricao());
         ps.setString(2, entidade.getPass());
+        ps.setString(3, entidade.getPass());
         ps.setInt(3, entidade.getId());
         ps.execute();   
     }
 
     @Override
-    public Senha pesquisarId(int id) throws Exception {
+    public Login pesquisarId(int id) throws Exception {
         PreparedStatement ps = conn.prepareStatement("SELECT * FROM Contato WHERE id = ?)");
         ps.setInt(1, id);
         ResultSet rs = ps.executeQuery();
-        Senha s = null;
+        Login s = null;
         if (rs.next()) {
-            s = new Senha();
+            s = new Login();
             s.setId(rs.getInt("id"));
             s.setDescricao(rs.getString("descricao"));
             s.setPass(rs.getString("pass"));
@@ -65,18 +67,18 @@ public class LoginJDBC1 implements InterfaceDao<Senha> {
         return s;    }
 
     @Override
-    public List<Senha> listar() throws Exception {
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM Senha");
+    public List<Login> listar() throws Exception {
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM Login");
         ResultSet rs = ps.executeQuery();
-        ArrayList<Senha> contatos = new ArrayList();
+        ArrayList<Login> Logins = new ArrayList();
         while (rs.next()) {
-            Senha s = new Senha();
-            s.setId(rs.getInt("id"));
-            s.setDescricao(rs.getString("descricao"));
-            s.setPass(rs.getString("pass"));
-            contatos.add(s);
+            Login login = new Login();
+            login.setId(rs.getInt("id"));
+            login.setDescricao(rs.getString("descricao"));
+            login.setPass(rs.getString("pass"));
+            Logins.add(login);
         }
-        return contatos;    
+        return Logins;    
     }
         
 }

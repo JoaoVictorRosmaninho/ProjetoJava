@@ -12,6 +12,15 @@ package model;
 public class Senha {
     private String descricao;
     private String pass;
+    private String desc_senha;
+
+    public String getDesc_senha() {
+        return desc_senha;
+    }
+
+    public void setDesc_senha(String desc_senha) {
+        this.desc_senha = desc_senha;
+    }
     private int id;
 
     public int getId() {
