@@ -13,7 +13,8 @@ public class Senha {
     private String descricao;
     private String pass;
     private String desc_senha;
-
+    private String login;
+    
     public String getDesc_senha() {
         return desc_senha;
     }
@@ -31,9 +32,11 @@ public class Senha {
         this.id = id;
     }
 
-    public Senha(String descricao, String pass) {
+    public Senha( String login, String pass, String desc_senha, String descricao) {
+        this.desc_senha = desc_senha;
         this.descricao = descricao;
         this.pass = pass;
+        this.login = login;
     }
 
     public String getDescricao() {
@@ -54,4 +57,14 @@ public class Senha {
 
     public Senha() {
     }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+    
+    
 }

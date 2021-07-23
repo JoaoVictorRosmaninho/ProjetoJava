@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 
@@ -14,7 +15,7 @@
       <Label layoutX="66.0" layoutY="167.0" text="Senha:" />
       <TextField fx:id="txtFDescricao" layoutX="80.0" layoutY="58.0" />
       <TextField fx:id="txtFLogin" layoutX="80.0" layoutY="126.0" />
-      <TextField fx:id="txtFSenha" layoutX="80.0" layoutY="200.0" onKeyReleased="#txtFSenhaOnTextChanged" />
+      <PasswordField fx:id="txtFSenha" layoutX="80.0" layoutY="200.0" onKeyReleased="#txtFSenhaOnTextChanged" />
       <Button fx:id="btnCadastrarSenha" layoutX="450.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnCadastrarSenhaOnAction" text="Cadastrar nova senha" />
       <Circle fx:id="circleDificuldade" fill="DODGERBLUE" layoutX="251.0" layoutY="213.0" radius="9.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" />
       <Label fx:id="txtStatusSenhaCadastrada" layoutX="127.0" layoutY="251.0" />

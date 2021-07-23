@@ -15,7 +15,9 @@ import java.sql.SQLException;
  */
 public class ConnFactory {
     public static Connection getConnection() throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/GenSenha", "jv", "123");
+        //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/GenSenha", "jv", "123");
+        //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/senhas", "root", "1234");
         return conn;
     }
 }

@@ -13,4 +13,8 @@ public class daoFactory {
     public static SenhaJDBC novaSenhaDao() throws Exception {
         return new SenhaJDBC();
     }
+    
+    public static LoginJDBC novoLoginDao() throws Exception {
+        return new LoginJDBC();
+    }
 }

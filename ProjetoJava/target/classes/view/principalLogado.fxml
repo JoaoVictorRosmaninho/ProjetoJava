@@ -11,26 +11,29 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrincipalLogadoController">
    <children>
-      <Button fx:id="btnCadastrarSenha" layoutX="452.0" layoutY="77.0" mnemonicParsing="false" onAction="#btnCadastrarSenhaOnAction" text="Cadastrar Nova Senha" />
-      <Button fx:id="btnVizualiarSenhas" layoutX="467.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnVizualiarSenhasOnAction" text="Vizualizar Senhas" />
+      <Button fx:id="btnCadastrarSenha" layoutX="313.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnCadastrarSenhaOnAction" text="Cadastrar Nova Senha" />
+      <Button fx:id="btnVizualiarSenhas" layoutX="473.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnVizualiarSenhasOnAction" text="Vizualizar Senhas" />
       <ImageView fx:id="imgViewLogado" fitHeight="84.0" fitWidth="107.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
-      <VBox fx:id="vboxSenhas" layoutX="20.0" layoutY="104.0" prefHeight="260.0" prefWidth="400.0">
+      <VBox fx:id="vboxSenhas" layoutX="20.0" layoutY="104.0" prefHeight="260.0" prefWidth="460.0" visible="false">
          <children>
-            <TableView fx:id="tableSenhas" onSort="#tableSenhasOnSort" prefHeight="266.0" prefWidth="400.0">
+            <TableView fx:id="tableSenhas" prefHeight="266.0" prefWidth="400.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Login" />
-                <TableColumn prefWidth="75.0" text="Senha" />
-                  <TableColumn prefWidth="108.0" text="Força da Senha" />
+                <TableColumn fx:id="columnLogin" prefWidth="225.0" text="Login" />
+                <TableColumn fx:id="columnSenha" minWidth="0.0" prefWidth="117.0" text="Senha" />
+                  <TableColumn fx:id="columnForca" prefWidth="117.0" text="Força da Senha" />
               </columns>
             </TableView>
          </children></VBox>
-      <Label layoutX="25.0" layoutY="369.0" text="Total de senhas:" />
-      <Label layoutX="164.0" layoutY="369.0" text="Senhas fracas:" />
-      <Label layoutX="286.0" layoutY="369.0" text="Senhas medianas:" />
-      <Label layoutX="452.0" layoutY="369.0" text="Senhas fortes:" />
-      <Text layoutX="121.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text| " />
-      <Text layoutX="247.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text| " />
-      <Text layoutX="389.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text| " />
-      <Text layoutX="539.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text| " />
+      <Label fx:id="labelSenhasExcelentes" layoutX="424.0" layoutY="376.0" text="Senhas Excelentes" visible="false" />
+      <Label fx:id="labelSenhasFracas" layoutX="12.0" layoutY="376.0" text="Senhas fracas:" visible="false" />
+      <Label fx:id="labelSenhasMedianas" layoutX="134.0" layoutY="376.0" text="Senhas medianas:" visible="false" />
+      <Label fx:id="labelSenhasFortes" layoutX="300.0" layoutY="376.0" text="Senhas boas:" visible="false" />
+      <Text fx:id="txtSenhasExcelentes" layoutX="533.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text| " visible="false" />
+      <Text fx:id="txtSenhasFracas" layoutX="95.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text| " visible="false" />
+      <Text fx:id="txtSenhasMedianas" layoutX="237.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text| " visible="false" />
+      <Text fx:id="txtSenhasFortes" layoutX="387.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text| " visible="false" />
+      <Button fx:id="btnEditar" layoutX="176.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnEditarOnAction" text="Editar" visible="false" />
+      <Button fx:id="btnExcluir" layoutX="235.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnExcluirOnAction" text="Excluir" visible="false" />
+      <Button fx:id="btnLoggout" layoutX="493.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnLoggout" text="Fazer Loggout" />
    </children>
 </AnchorPane>

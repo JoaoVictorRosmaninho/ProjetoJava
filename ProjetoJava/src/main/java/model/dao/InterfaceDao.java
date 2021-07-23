@@ -15,6 +15,8 @@ public interface InterfaceDao<T> {
     
     public abstract void incluir(T entidade) throws Exception;
     
+    public abstract void incluirComFK(T entidade, int id) throws Exception;
+    
     public abstract void excluir(T entidade) throws Exception;
     
     public abstract void editar(T entidade) throws Exception;
@@ -22,4 +24,6 @@ public interface InterfaceDao<T> {
     public abstract T pesquisarId(int id) throws Exception;
     
     public abstract List<T> listar() throws Exception; 
+    
+    public abstract int verificaLogin(T entidade) throws Exception;
 }

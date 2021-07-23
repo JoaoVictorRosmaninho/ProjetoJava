@@ -5,6 +5,8 @@ module start {
     requires java.sql;
 
     opens controller to javafx.fxml;
+    opens model to javafx.fxml;
+    exports model;
     exports controller;
     exports start;
 }

@@ -12,17 +12,31 @@ package model;
 public class Login {
     private int id;
     private String login;
+    private String Email;
     private String pass;
     private String descricao;
 
     public Login() {
     }
 
-    public Login(int id, String login, String pass, String descricao) {
+    public Login(int id, String login, String pass, String descricao,String email) {
         this.id = id;
         this.login = login;
         this.pass = pass;
         this.descricao = descricao;
+        this.Email = email;
+    }
+    
+    public Login(String descricao, String pass, String login, String email){
+        this.descricao = descricao;
+        this.pass = pass;
+        this.login = login;
+        this.Email = email;
+    }
+    
+    public Login(String login, String pass){
+        this.login = login;
+        this.pass = pass;
     }
 
     public int getId() {
@@ -55,6 +69,14 @@ public class Login {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
     
     
