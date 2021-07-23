@@ -53,7 +53,7 @@ public class LoginJDBC implements InterfaceDao<Login> {
 
     @Override
     public Login pesquisarId(int id) throws Exception {
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM Contato WHERE id = ?)");
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM Contato WHERE id = ?);");
         ps.setInt(1, id);
         ResultSet rs = ps.executeQuery();
         Login s = null;
